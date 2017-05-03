@@ -1,0 +1,26 @@
+<h1>{{'title' | translate}}</h1>
+
+<nav>
+    <ul class="menu align-right">
+        <li *ngIf="user.id">
+            <a routerLink="/dashboard" class="button light icon-adjustments">
+                <span hidden>{{'dashboard' | translate}}</span>
+            </a>
+            <a routerLink="/planning" class="button light icon-calendar">
+                <span hidden>{{'planning' | translate}}</span>
+            </a>
+            <a routerLink="/documents" class="button light icon-document">
+                <span hidden>{{'documents' | translate}}</span>
+            </a>
+        </li>
+
+        <li *ngIf="!user.id">
+            <a routerLink="/login">{{'login' | translate}}</a>
+        </li>
+        <li *ngIf="user.id">
+            <a routerLink="/account" class="button light icon-profile">
+                <span hidden>{{'account' | translate}}</span>
+            </a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,45 @@
+<div class="row" >
+    <div class="small-8 columns">
+        <div class="panel">
+            <h2 class="title">{{store.model.found_name}}</h2>
+            <a routerLink="/found/{{store.model.found_name}}" class="button light icon-bargraph">
+                <span hidden>{{'history' | translate}}</span>
+            </a>
+            <ul class="small-block-grid-1 table">
+                <li class="list-head">
+                    <div class="expenditure-name">{{'expenditure' | translate}}</div>
+                    <div class="expenditure-provider">{{'provider' | translate}}</div>
+                    <div class="expenditure-provision">{{'provision' | translate}}</div>
+                    <div class="expenditure-current">{{'spent' | translate}}</div>
+                    <div class="expenditure-remaining">{{'remaining' | translate}}</div>
+                    <div class="expenditure-btn"></div>
+                </li>
+
+                <li class="expenditure-component" *ngFor="let expenditure of store.model.expenditures" [expenditure]="expenditure" [authorization]="store.model.authorization"></expenditure>
+            </ul>
+
+            <button class="button light icon-close" (click)="delete()">{{"delete" | translate}}</button>
+        </div>
+    </div>
+
+    <div class="small-4 columns">
+        <div class="panel">
+            <h2 class="title">{{'repartition' | translate}}</h2>
+
+            <div id="chart{{store.model.found_id}}" class="chart"
+                [attr.data-oftotal]="'oftotal' | translate"
+                [attr.data-of]="'of' | translate">
+                <span id="chartPercent{{store.model.found_id}}" class="chart-percentage"></span>
+            </div>
+
+            <ul id="chartLegend{{store.model.found_id}}" class="chart-legend">
+                <li *ngFor="let row of store.model.expenditures" [attr.data-name]="row.name">
+                    <span class="color" [style.background]="row.color"></span>
+                    <span class="name">{{row.name}} - {{row.provider}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<modal-confirm class="modal-container" *ngIf="store.model.authorization.DELETE"></modal-confirm>

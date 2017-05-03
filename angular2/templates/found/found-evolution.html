@@ -1,0 +1,26 @@
+<div class="row" >
+    <div class="small-8 columns">
+        <div class="panel">
+            <h2 class="title">{{store.model.found_name}}</h2>
+
+            <input type="range" step="1" list="years">
+            <datalist id="years">
+                <option *ngFor="let year of store.model.years">{{year}}</option>
+            </datalist>
+
+            <div id="chart" class="chart"></div>
+        </div>
+    </div>
+
+    <div class="small-4 columns">
+        <div class="panel">
+            <h2 class="title">{{'legend' | translate}}</h2>
+            <ul id="chartLegend" class="chart-legend">
+                <li *ngFor="let row of store.model.expenditures" [attr.data-name]="row.name">
+                <span class="color" [style.background]="row.color"></span>
+                <span class="name">{{row.name}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

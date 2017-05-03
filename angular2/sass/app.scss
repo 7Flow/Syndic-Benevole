@@ -1,0 +1,24 @@
+@import "foundation";
+@import "compass/css3";
+
+//
+
+@include foundation-everything(true);
+/*
+@include foundation-global-styles;
+//@include foundation-grid;
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+*/
+
+@import "font";
+@import "layout";
+@import "table";
+@import "modals";
+@import "home";
+@import "budget";
+@import "coowners";
+@import "documents";

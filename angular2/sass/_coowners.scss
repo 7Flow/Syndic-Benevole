@@ -1,0 +1,38 @@
+.CoOwners {
+
+  .pagination {
+    position: fixed;
+    bottom: 10px;
+  }
+
+  .accordion-navigation > a > div,
+  .list-head > div,
+  .list li > div {
+    width: 24%;
+    float: left;
+    &.expenditure-name,
+    &.spending-description {
+      width: 40%;
+    }
+  }
+
+  .table {
+    dd > div {
+      width: 24%;
+      float: left;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      &:first-of-type {
+        clear: both;
+      }
+    }
+    .admin-buttons {
+      width: auto;
+    }
+    dl dd {
+      margin: 0;
+    }
+  }
+}

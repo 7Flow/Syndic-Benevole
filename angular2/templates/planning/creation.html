@@ -1,0 +1,64 @@
+<div class="row controls">
+    <div class="large-12 columns">
+        <div class="panel">
+            <h2>{{'planning' | translate}}</h2>
+
+            <div id="labels" class="row labels" (click)="toggleFilters()">
+                <div class="large-4 medium-4 small-4 columns">
+                    <label [attr.data-default]="'apartments' | translate">{{'apartments' | translate}}</label>
+                </div>
+                <div class="large-4 medium-4 small-4 columns period">
+                    <label [attr.data-default]="'period' | translate">{{'period' | translate}}</label>
+                </div>
+                <div class="large-4 medium-4 small-4 columns year">
+                    <label for="year" [attr.data-default]="'year' | translate">{{'year' | translate}}: {{year}}</label>
+                </div>
+            </div>
+
+            <div id="filters" class="row filters">
+                <div class="large-4 medium-4 small-4 columns">
+                    <ul class="apartments">
+                        <li>
+                            <input id="all" type="checkbox" checked="true" value="all" class="all" [attr.data-label]="'all' | translate" (change)="updateApartments($event)">
+                            <label for="all">{{'all' | translate}}</label>
+                        </li>
+                        <li *ngFor='let apart of apartmentStore.apartments; let i = index'>
+                            <input id="apart{{apart.id}}" type="checkbox" value="{{i}}" class="lot" [attr.data-label]="apart.lot" (change)="updateApartments($event)">
+                            <label for="apart{{apart.id}}">{{'lot' | translate}} {{apart.lot}} : {{apart.coowners}}</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="large-4 medium-4 small-4 columns period">
+                    <select class="period" (change)="updateFilters($event)">
+                        <option value="1">{{'oneWeek' | translate}}</option>
+                        <option value="2" selected="true">{{'twoWeeks' | translate}}</option>
+                        <option value="4">{{'fourWeeks' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="large-4 medium-4 small-4 columns year">
+                    <input id="year" type="text" value="{{year}}" />
+                </div>
+            </div>
+
+            <div class="row actions">
+                <div class="large-12 columns">
+                    <button class="button" (click)="create()">{{'create' | translate}}</button>
+                    <button class="button" (click)="save()">{{'save' | translate}}</button>
+                    <button class="button" (click)="load()">{{'load' | translate}}</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="planning" class="row planning">
+    <div class="large-12 columns">
+        <div class="panel">
+            <input type="textfield" class="title" value="Planning" />
+
+        </div>
+    </div>
+</div>

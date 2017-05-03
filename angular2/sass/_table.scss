@@ -1,0 +1,129 @@
+
+// G R I D   S T R U C T U R E
+.row {
+    margin-bottom: 2rem;
+
+    &.labels {
+        font-weight: 900;
+    }
+}
+
+.columns {
+
+}
+
+.panel {
+    background: $color-odd;
+    height: 100%;
+    @include single-box-shadow(0px, 2px, 8px, -3px, #555555);
+
+    &.table {
+        padding: 0;
+    }
+
+    &.glass {
+        background: none;
+        border: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    h1, h2 {
+        margin-bottom: 1rem;
+    }
+
+    li {
+        width: 100%;
+        display: block;
+
+        h6 {
+            display: inline-block;
+        }
+        span {
+            display: inline-block;
+        }
+    }
+}
+
+ul.table {
+    width: 100%;
+    margin: 0;
+    border-left: 1px solid $complementary-light;
+    border-right: 1px solid $complementary-light;
+    border-bottom: 1px solid $complementary-light;
+
+    li {
+        width: 100%;
+        display: block;
+
+        &.list-head {
+            height: 2.5rem;
+            background: $primary-color;
+            color: #fff;
+            font-size: 0.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            div {
+                display: inline-block;
+                text-align: left;
+                padding: .5rem 1rem .5rem;
+                border-right: 1px solid $complementary-lightest;
+                vertical-align: middle;
+
+                &:last-of-type {
+                    border: none;
+                }
+            }
+        }
+
+        &:nth-child(even) {
+            background: $complementary-lightest;
+        }
+    }
+}
+
+// details table
+details {
+    position: relative;
+
+    summary::-webkit-details-marker {
+        display: none
+    }
+    summary:after {
+        content: "+";
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+    }
+    &[open] summary:after {
+        content: "-";
+    }
+
+    summary {
+        div {
+            display: inline-block;
+            padding: .5rem 1rem .625rem;
+            vertical-align: top;
+            border-right: 1px solid $complementary-light;
+
+            text-align: left;
+            word-break: normal;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+
+    ul.table {
+        li.list-head {
+            height: 2rem;
+            background: $complementary-light;
+
+            div {
+                padding: .375rem 1rem .375rem;
+            }
+        }
+    }
+}

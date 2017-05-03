@@ -1,0 +1,8 @@
+<div class="modal" [attr.closed]="!isOpened">
+    <button class="button light icon-close" (click)="close()">{{"close" | translate}}</button>
+
+    <h3>{{'confirm' | translate}}</h3>
+
+    <button class="button light icon-close" (click)="cancel()">{{"no" | translate}}</button>
+    <button class="button light icon-validate" (click)="confirm()">{{"yes" | translate}}</button>
+</div>

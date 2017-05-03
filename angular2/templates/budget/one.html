@@ -1,0 +1,7 @@
+<founddetails-component *ngFor="let found of store.model.founds" [found]="found" (ready)="isFoundReady($event)"></founddetails-component>
+
+<div class="row" *ngIf="store.model.authorization.POST">
+    <a class="button light" (click)="add()">{{'add' | translate}}</a>
+</div>
+
+<modal-found-add class="modal-container" *ngIf="store.model.authorization.POST" [found]="newFound"></modal-found-add>

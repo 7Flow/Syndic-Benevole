@@ -1,0 +1,27 @@
+<div class="row align-center">
+    <div class="column small-6">
+        <div class="panel glass">
+            <h1 class="title">{{'welcome' | translate}}</h1>
+            <div class="text">{{'introduction' | translate}}</div>
+            <a class="mail-to"></a>
+        </div>
+    </div>
+
+    <div class="column small-4">
+        <div class="panel">
+            <h2 class="title">{{'connexion' | translate}}</h2>
+
+            <form data-abide (ngSubmit)="onSubmit(authForm.value)" #authForm="ngForm">
+                <div>
+                    <input id="login" name="login" type="text" placeholder="{{'login' | translate}}" required pattern="[a-zA-Z0-9]+" ngModel>
+                </div>
+                <div>
+                    <input id="password" name="password" type="password" placeholder="{{'password' | translate}}" required pattern="[a-zA-Z0-9]+" ngModel>
+                </div>
+                <div>
+                    <button type="submit" class="button expanded" [disabled]="!authForm.form.valid">{{'validate' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

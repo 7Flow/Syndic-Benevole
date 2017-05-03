@@ -1,0 +1,415 @@
+@import "compass/css3";
+
+@import "_global";
+
+
+html, body, main {
+    height: 100%;
+}
+body {
+    background: $color-bg;
+    color: black;
+}
+
+header, footer {
+    color: white;
+}
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: $primary-color;
+    color: $complementary-light;
+
+    h1 {
+        font-size: 2rem;
+        float: left;
+        margin: 0.5rem 0 0 2rem;
+    }
+
+    nav {
+        float: right;
+        margin: 0.5rem 2rem 0 0;
+        a {
+            &.button {
+                display: inline-block;
+                color: #fff;
+                &.light {
+                    color: #fff;
+                }
+            }
+            &:focus, &:hover {
+                text-decoration: underline;
+            }
+            &.active {
+                color: $complementary-light;
+            }
+        }
+
+    }
+}
+
+footer {
+    height: 40px;
+    position: relative;
+    top: -40px;
+    background-color: $secondary-color;
+}
+
+main {
+    padding-top: 60px;
+}
+
+section {
+    min-height: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+h2, h4 {
+    border-bottom: 1px solid #000;
+    text-transform: capitalize;
+}
+
+ul {
+    margin-left: 0;
+
+    li {
+        display: inline-block;
+    }
+}
+
+.button, button {
+    font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    padding: 1rem;
+
+    &.light {
+        background: none;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+    }
+
+    &[class*=" icon-"] {
+        font-family: 'icomoon';
+    }
+}
+
+.panel {
+    position: relative;
+    li {
+        position: relative;
+    }
+    .button, button {
+        &.light {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.tab-bar {
+    background: $primary-color;
+    /*@include background-image(linear-gradient($primary, #3a3a3a));*/
+    @include single-box-shadow(0px, 0px, 5px, 0px, #555555, false);
+
+    .right-small > a {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0px 15px;
+        color: #fff;
+        font-size: 18px;
+    }
+    .right-small {
+        right: -2.8125rem;
+        @include single-transition(right, 0.3s, ease-out);
+
+        &.active {
+            right: 0;
+        }
+    }
+}
+
+// LEFT MENU
+// - override Foundation default picto
+.left-submenu .back>a:before,
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu>a:after {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul.off-canvas-list li a {
+  @include single-transition();
+
+  &:before {
+    padding-right: 10px;
+  }
+  &:hover {
+
+  }
+}
+
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu>a:after {
+  float: right;
+}
+
+// arrow-left
+.left-submenu .back>a:before {
+  content: "\e61f";
+}
+// arrow-right
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu>a:after {
+  content: "\e622";
+}
+
+#userMenu {
+  width: 200px;
+}
+
+.main,
+.off-canvas-wrap,
+.inner-wrap {
+  min-height: 100%;
+}
+
+.sub-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                    //
+// B R E A D C R U M B                                                                                                //
+//                                                                                                                    //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+nav.breadcrumb {
+    padding: 1rem .9375rem 2rem;
+    font-size: 11px;
+    text-transform: uppercase;
+    a {
+        color: $complementary;
+        &:before {
+            content: " > ";
+        }
+        &:last-of-type {
+            &:before {
+                content: "";
+            }
+            color: $complementary-light;
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                    //
+// F O U N D A T I O N                                                                                                //
+//                                                                                                                    //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.admin-buttons {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  .icon-cup {
+    margin-left: 5px;
+  }
+}
+
+// DROPDOWN
+.f-dropdown li a {
+  display: none;
+  &.button {
+    display: block;
+    margin: 0;
+    text-align: left;
+    color: #fff;
+    background: $primary-color;
+    border-top: 1px solid #545454;
+    border-bottom: 1px solid #000000;
+    &:before {
+      padding-right: 10px;
+    }
+    &:hover {
+      background: #2B2B2B;
+    }
+  }
+}
+.f-dropdown:before {
+  border-color: transparent transparent $primary-color transparent;
+}
+.f-dropdown.drop-left:before {
+  border-color: transparent transparent transparent $primary-color;
+}
+.f-dropdown.open::before {
+  top: -11px;
+}
+.f-dropdown.drop-left.open:before {
+  top: 4px;
+  left: 198px;
+}
+.f-dropdown.drop-left.open:after {
+  top: 3px;
+}
+
+// modal
+.reveal-modal {
+  top: 100px;
+  @include simple-transform(0.9);
+  @include single-transition(transform, 0.2s, ease-out);
+  &.open {
+    @include simple-transform(1);
+  }
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #c0C0C0;
+    padding-bottom: 20px;
+  }
+  h6 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .buttons-container {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    .button {
+      position: relative;
+      right: initial;
+      margin-right: 5%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// range
+.range-slider-handle {
+  background: none;
+
+  &:before {
+    content: " ";
+    display: block;
+    width: 67%;
+    height: 100%;
+    background: #008cba;
+  }
+  &.start {
+    &:after {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+
+      border-color: rgba(136, 183, 213, 0);
+      border-left-color: #008cba;
+      border-width: 0.688rem;
+      margin-top: -0.688rem;
+      margin-left: -0.688rem;
+    }
+  }
+  &.end {
+    &:after {
+      right: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+
+      border-color: rgba(136, 183, 213, 0);
+      border-right-color: #008cba;
+      border-width: 0.688rem;
+      margin-top: -0.688rem;
+      margin-right: -0.688rem;
+    }
+    &:before {
+      position: relative;
+      top: 0;
+      right: -0.688rem;
+    }
+  }
+
+  &:hover {
+    background: none;
+    &:before {
+      background: #007ba4;
+    }
+    &.start:after {
+      border-left-color: #007ba4;
+    }
+    &.end:after {
+      border-right-color: #007ba4;
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                    //
+// F O R M                                                                                                            //
+//                                                                                                                    //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.error input, .error textarea, .error select {
+    border: 1px solid #fe0000;
+    margin-bottom: 1rem;
+}
+
+label {
+    text-transform: capitalize;
+}
+
+/*
+ * FOUNDATION 6.2:
+ * To enable background for print,
+ * need to change a variable in scss/typography/_print.scss:
+ * $print-transparent-backgrounds: false;
+ */
+@media print {
+    * {
+        background-color: inherit;
+    }
+    header, footer, .breadcrumb {
+        display: none;
+    }
+    body {
+        -webkit-print-color-adjust: exact;
+        background: none;
+    }
+    main {
+        padding: 0;
+    }
+    section {
+        padding: 0;
+    }
+    .tab-bar,
+    .button {
+        display: none;
+    }
+    .panel {
+        border: none;
+    }
+}
