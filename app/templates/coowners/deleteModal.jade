@@ -1,0 +1,11 @@
+div(class='modal-background')
+    a(class='close-reveal-modal', href='javascript:void(0);', ng-click='cancel()') &times
+
+    div(class='small-12 columns')
+        div(class='row')
+            h3(i18n='delete')
+        div(class='row')
+            h6(i18n='confirm-delete-coowner')
+        div(class='row buttons-container')
+            a(class='button close-reveal-modal icon-cross', href='javascript:void(0);', i18n='cancel')
+            a(class='button alert icon-checkmark', href='javascript:void(0);', ng-click='confirm()', i18n='confirm')

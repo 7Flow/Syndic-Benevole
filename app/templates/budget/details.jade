@@ -1,0 +1,63 @@
+div(class='row')
+    div(class='small-8 columns')
+        #details(class='panel details')
+            h1(class='title', i18n='budget')
+
+            ul(class='small-block-grid-1 table', ng-model='data')
+                li
+                    div(class="list-head")
+                        div(class='expenditure-name', i18n='expenditure')
+                        div(class='expenditure-provider', i18n='provider')
+                        div(class='expenditure-provision', i18n='provision')
+                        div(class='expenditure-current', i18n='spent')
+                        div(class='expenditure-remaining', i18n='remaining')
+                        div(class='expenditure-btn')
+
+                    dl(class='accordion', data-accordion='expenditures')
+                        dd(class='accordion-navigation', ng-repeat='row in data')
+                            a(href='#details{{$index}}')
+                                div(class='expenditure-name') {{row.name}}
+                                div(class='expenditure-provider') {{row.provider}}
+                                div(class='expenditure-provision') {{row.size | currency:'&euro;'}}
+                                div(class='expenditure-current') {{row.current | currency:'&euro;'}}
+                                div(class='expenditure-remaining') {{row.remaining | currency:'&euro;'}}
+                                div(ng-if='authorization.PUT', class='btn-admin icon-cog', ng-click='prevent($event)', data-dropdown="expendAdmin{{$index}}", aria-expended="false")
+                                ul(id="expendAdmin{{$index}}", class="f-dropdown", data-dropdown-content)
+                                    li
+                                        a(ng-if='authorization.PUT', href="javascript:void(0);", class='button icon-pencil', ng-click='modify(row.id)', i18n='modify')
+                                        a(ng-if='authorization.DELETE', href="javascript:void(0);", class='button icon-cup', ng-click='delete(row.id)', data-reveal-id='deleteModal', i18n='delete')
+
+                            div(id='details{{$index}}', class='content')
+                                div(class='container')
+                                    div(class='list')
+                                        div(class="list-head")
+                                            div(i18n='description', class='spending-description')
+                                            div(i18n='date')
+                                            div(i18n='amount')
+                                        ul
+                                            li(ng-repeat='spending in row.children', class='')
+                                                div(class='spending-description') {{spending.name}}
+                                                div {{spending.date | date:'mediumDate' : format:'fr-FR'}}
+                                                div {{spending.size | currency:'&euro;'}}
+
+                                                div(class='admin-buttons')
+                                                    a(ng-if='authorization.PUT', class='button icon-pencil', href='javascript:void(0);', ng-click='modify(row.id)', i18n-title='modify', data-tooltip='', aria-haspopup='true')
+                                                    a(ng-if='authorization.DELETE', class='button alert icon-cup', href='javascript:void(0);', ng-click='delete(row.id)', i18n-title='delete', data-tooltip='', aria-haspopup='true')
+                                        div
+                                            a(ng-if='authorization.POST', class='button icon-plus success', href='javascript:void(0);', ng-click='add()', i18n='add-spending')
+
+    div(class='small-4 columns')
+        #chart(class='panel chart', i18n-data='of-oftotal-remaining')
+            h2(class='title', i18n='repartition')
+            #chartExplanation(class='chart-explanation')
+                span(id='chartPercentage', class='chart-percentage')
+
+        #budgetActions(class='panel')
+            div(class='button', i18n='')
+            div(class='button', i18n='')
+
+div(id='deleteModal', class='delete-modal reveal-modal', ng-show='showDeleteModal', data-reveal, ng-budgetid='budgetId')
+
+div(id='addModal', class='add-modal reveal-modal', ng-show='showAddModal', data-reveal)
+
+div(id='updateModal', class='update-modal reveal-modal', ng-show='showUpdateModal', ng-budget='data', data-reveal)

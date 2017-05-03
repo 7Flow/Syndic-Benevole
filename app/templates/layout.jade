@@ -1,0 +1,52 @@
+div(class="off-canvas-wrap" data-offcanvas)
+    div(class="inner-wrap")
+        nav(class="tab-bar")
+            section(class="left-small")
+                a(class="left-off-canvas-toggle menu-icon")
+                    span
+
+            section(class="middle tab-bar-section")
+                h1(class="title") ESyndic
+
+            section(ng-switch="userLoggedIn", class="right-small")
+                a(ng-switch-when='true', href="javascript:void(0);", data-dropdown="userMenu", data-options="align: left; is_hover:true", aria-expended="false", class='icon-user')
+                ul(id="userMenu", class="small f-dropdown", data-dropdown-content)
+                    li
+                        a(href="#/coowners/{{user.id}}", class="button") Info Personnelles
+                        a(href="javascript:void(0);", class="icon-exit button" ng-click="logout()") Déconnexion
+
+
+        aside(class="left-off-canvas-menu")
+            ul(class="off-canvas-list")
+                li
+                    label ESyndic
+                li
+                    a(href="#/apartment", class='icon-office', i18n='apartments') Appartements
+                li
+                    a(href="#/coowners", class='icon-user', i18n='coowners') Copropriétaires
+                li(class="has-submenu")
+                    a(href="#/budget", class='icon-creditcard', i18n='budget') Budget
+                    ul(class="left-submenu")
+                        li(class="back")
+                            a(href="#", i18n='budget') Budget
+                        li
+                            a(href="#/budget/2015", class='icon-pie', i18n='annual') Annuel
+                        li
+                            a(href="#/budget", class='icon-graph', i18n='evolution') Evolution
+                li(class="has-submenu")
+                    a(href="#", class='icon-users') Assemblée Générales
+                    ul(class="left-submenu")
+                        li(class="back")
+                            a(href="#") Assemblée Générales
+                        li
+                            a(href="#", class='icon-clipboard', i18n='reports') Compte rendu
+                        li
+                            a(href="#", class='icon-calendar', i18n='calendar') Calendrier
+                        li
+                            a(href="#", class='icon-archive', i18n='archives') Archives
+                li
+                    a(href="#/documents", class='icon-books', i18n='useful-documents') Documents Utiles
+
+        section(class="main-section")
+
+        a(class="exit-off-canvas")

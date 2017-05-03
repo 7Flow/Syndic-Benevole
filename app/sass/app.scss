@@ -1,0 +1,16 @@
+@import "mixins";
+@import "layout";
+@import "home";
+@import "budget";
+@import "coowners";
+@import "documents";
+
+// MODAL
+.reveal-modal {
+  .button.close-reveal-modal {
+    position: relative;
+    top: 0;
+    color: #fff;
+    font-size: 1rem;
+  }
+}

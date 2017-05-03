@@ -1,0 +1,468 @@
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+@import "compass/css3/images";
+@import "compass/css3/transform";
+
+$color-main: #322B2B;
+$color-title: #322B2B;
+$color-active: #e6e6e3;
+$color-odd: #fefffe;
+$color-even: #fcfdfc;
+$color-bg: #f8f6f2;
+$color-bg-grey: #F7F2F6;
+
+body {
+  background: $color-bg;
+}
+
+.tab-bar {
+  background: $color-main;
+  /*@include background-image(linear-gradient($color-main, #3a3a3a));*/
+  @include single-box-shadow(0px, 0px, 5px, 0px, #555555, false);
+
+  .right-small > a {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0px 15px;
+    color: #fff;
+    font-size: 18px;
+  }
+  .right-small {
+    right: -2.8125rem;
+    @include single-transition(right, 0.3s, ease-out);
+
+    &.active {
+      right: 0;
+    }
+  }
+}
+
+// LEFT MENU
+// - override Foundation default picto
+.left-submenu .back>a:before,
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu>a:after {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ul.off-canvas-list li a {
+  @include single-transition();
+
+  &:before {
+    padding-right: 10px;
+  }
+  &:hover {
+
+  }
+}
+
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu>a:after {
+  float: right;
+}
+
+// arrow-left
+.left-submenu .back>a:before {
+  content: "\e61f";
+}
+// arrow-right
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu>a:after {
+  content: "\e622";
+}
+
+#userMenu {
+  width: 200px;
+}
+
+
+.main,
+.off-canvas-wrap,
+.inner-wrap {
+  min-height: 100%;
+}
+
+.sub-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                    //
+// F O U N D A T I O N                                                                                                //
+//                                                                                                                    //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+[class*="block-grid-"]>li {
+  padding-bottom: 0;
+}
+
+.title {
+  font-size: 2rem;
+}
+// G R I D   S T R U C T U R E
+.columns {
+
+}
+.panel {
+  background: $color-odd;
+  @include single-box-shadow(0px, 2px, 8px, -3px, #555555);
+  &.table {
+    padding: 0;
+  }
+  &.glass {
+    background: none;
+    border: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  h1, h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+// A C C O R D I O N - T A B L E  :  dl > dd
+// L I S T
+// -> looks like table
+.list-head {
+  background: $color-title;
+  color: #fff;
+  height: 37px;
+  padding: 0.5rem 1rem 0.625rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+.content .list-head {
+  background: rgba(0,0,0, 0.05);
+  color: $color-main;
+}
+
+.table {
+  font-size: 0.875rem;
+  dl {
+    border: 1px solid #d8d8d8;
+    font-size: 1em;
+  }
+  dd {
+    height: 3em;
+    background: none;
+    font-size: 1em;
+    padding: 0.8em 1em;
+  }
+  dl dd {
+    margin: 0;
+  }
+}
+.accordion {
+  font-size: 1em;
+}
+
+.accordion,
+.table {
+  .accordion-navigation {
+    padding: 0;
+  }
+  .accordion-navigation,
+  dd {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 1em;
+    color: $color-main;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #CECECE;
+    .btn-admin {
+      width: 5%;
+      font-size: 26px;
+      color: $color-main;
+      padding-left: 0.5em;
+    }
+  }
+
+  .accordion-navigation > .content,
+  dd > .content {
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    //max-height: 0;
+    background: $color-bg;
+    @include single-transition(max-height, 0.6s, ease-in-out);
+    @include single-box-shadow(1px, 4px, 23px, -9px, $color-title, true);
+
+    .container {
+      padding: 0;
+    }
+  }
+  .accordion-navigation > a,
+  dd {
+    background: $color-odd;
+    &:nth-of-type(even) {
+      background: $color-even;
+    }
+  }
+  .accordion-navigation > a,
+  dd > a {
+    height: 3em;
+    background: none;
+    font-size: 1em;
+    padding: 0.8em 1em;
+  }
+
+  .accordion-navigation>a:hover,
+  dd>a:hover {
+    background: $color-active;
+  }
+  .accordion-navigation.active>a,
+  dd.active>a {
+    background: $color-active;
+  }
+
+  // -> should be overrided for better animation
+  .accordion-navigation > .content.active,
+  dd > .content.active {
+    max-height: 1000px;
+    background: $color-bg;
+  }
+  .content {
+    clear: both;
+    &.active {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+  .list {
+    border: none;
+    .list-head {
+      border-bottom: solid 1px #ddd;
+    }
+    .admin-buttons {
+      width: auto;
+    }
+  }
+}
+.list {
+  li {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 3em;
+    list-style: none;
+    padding: 0.8em 1em;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #CECECE;
+  }
+  ul {
+    margin-left: 0;
+  }
+  .icon-plus {
+    margin: 0 5px 5px 0;
+    float: right;
+  }
+}
+/*
+.table {
+
+  dd {
+    position: relative;
+    color: $color-main;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #CECECE;
+    > a {
+      font-size: 1em;
+    }
+  }
+  dd > .admin-buttons {
+    top: 0.25rem;
+  }
+}
+*/
+.accordion-navigation > a > div,
+.list-head > div,
+.list li > div {
+  width: 20%;
+  float: left;
+}
+
+button {
+  @include single-text-shadow(0, 1px, 0, 0, #000);
+}
+.button, button {
+  &[class*=" icon-"] {
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+    &:before {
+      font-family: 'icomoon';
+    }
+  }
+}
+.admin-buttons {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  .icon-cup {
+    margin-left: 5px;
+  }
+}
+
+// DROPDOWN
+.f-dropdown li a {
+  display: none;
+  &.button {
+    display: block;
+    margin: 0;
+    text-align: left;
+    color: #fff;
+    background: $color-title;
+    border-top: 1px solid #545454;
+    border-bottom: 1px solid #000000;
+    &:before {
+      padding-right: 10px;
+    }
+    &:hover {
+      background: #2B2B2B;
+    }
+  }
+}
+.f-dropdown:before {
+  border-color: transparent transparent $color-title transparent;
+}
+.f-dropdown.drop-left:before {
+  border-color: transparent transparent transparent $color-title;
+}
+.f-dropdown.open::before {
+  top: -11px;
+}
+.f-dropdown.drop-left.open:before {
+  top: 4px;
+  left: 198px;
+}
+.f-dropdown.drop-left.open:after {
+  top: 3px;
+}
+
+// modal
+.reveal-modal {
+  top: 100px;
+  @include simple-transform(0.9);
+  @include single-transition(transform, 0.2s, ease-out);
+  &.open {
+    @include simple-transform(1);
+  }
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid #c0C0C0;
+    padding-bottom: 20px;
+  }
+  h6 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .buttons-container {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    .button {
+      position: relative;
+      right: initial;
+      margin-right: 5%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// range
+.range-slider-handle {
+  background: none;
+
+  &:before {
+    content: " ";
+    display: block;
+    width: 67%;
+    height: 100%;
+    background: #008cba;
+  }
+  &.start {
+    &:after {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+
+      border-color: rgba(136, 183, 213, 0);
+      border-left-color: #008cba;
+      border-width: 0.688rem;
+      margin-top: -0.688rem;
+      margin-left: -0.688rem;
+    }
+  }
+  &.end {
+    &:after {
+      right: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+
+      border-color: rgba(136, 183, 213, 0);
+      border-right-color: #008cba;
+      border-width: 0.688rem;
+      margin-top: -0.688rem;
+      margin-right: -0.688rem;
+    }
+    &:before {
+      position: relative;
+      top: 0;
+      right: -0.688rem;
+    }
+  }
+
+  &:hover {
+    background: none;
+    &:before {
+      background: #007ba4;
+    }
+    &.start:after {
+      border-left-color: #007ba4;
+    }
+    &.end:after {
+      border-right-color: #007ba4;
+    }
+  }
+}
+
+// FORM
+.error input, .error textarea, .error select {
+  border: 1px solid #fe0000;
+  margin-bottom: 1rem;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    background: none;
+  }
+  .tab-bar,
+  .button {
+    display: none;
+  }
+  .panel {
+    border: none;
+  }
+}

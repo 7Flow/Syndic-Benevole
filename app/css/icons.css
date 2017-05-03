@@ -1,0 +1,157 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-wif9ex');
+	src:url('fonts/icomoon.eot?#iefix-wif9ex') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-wif9ex') format('woff'),
+		url('fonts/icomoon.ttf?-wif9ex') format('truetype'),
+		url('fonts/icomoon.svg?-wif9ex#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-office:before {
+	content: "\e623";
+}
+.icon-books:before {
+	content: "\e624";
+}
+.icon-exit:before {
+	content: "\e628";
+}
+.icon-mail:before {
+	content: "\e600";
+}
+.icon-pencil:before {
+	content: "\e601";
+}
+.icon-paperclip:before {
+	content: "\e602";
+}
+.icon-user:before {
+	content: "\e603";
+}
+.icon-users:before {
+	content: "\e604";
+}
+.icon-user-add:before {
+	content: "\e605";
+}
+.icon-vcard:before {
+	content: "\e629";
+}
+.icon-chat:before {
+	content: "\e606";
+}
+.icon-house:before {
+	content: "\e607";
+}
+.icon-search:before {
+	content: "\e608";
+}
+.icon-printer:before {
+	content: "\e609";
+}
+.icon-bell:before {
+	content: "\e625";
+}
+.icon-flag:before {
+	content: "\e60a";
+}
+.icon-cog:before {
+	content: "\e60b";
+}
+.icon-new:before {
+	content: "\e60c";
+}
+.icon-calendar:before {
+	content: "\e60d";
+}
+.icon-key:before {
+	content: "\e60e";
+}
+.icon-cup:before {
+	content: "\e60f";
+}
+.icon-creditcard:before {
+	content: "\e610";
+}
+.icon-clipboard:before {
+	content: "\e626";
+}
+.icon-pie:before {
+	content: "\e611";
+}
+.icon-graph:before {
+	content: "\e612";
+}
+.icon-checkmark:before {
+	content: "\e613";
+}
+.icon-cross:before {
+	content: "\e614";
+}
+.icon-cross2:before {
+	content: "\e615";
+}
+.icon-minus:before {
+	content: "\e62a";
+}
+.icon-plus:before {
+	content: "\e62b";
+}
+.icon-info:before {
+	content: "\e616";
+}
+.icon-help:before {
+	content: "\e617";
+}
+.icon-warning:before {
+	content: "\e618";
+}
+.icon-history:before {
+	content: "\e61e";
+}
+.icon-folder:before {
+	content: "\e627";
+}
+.icon-archive:before {
+	content: "\e619";
+}
+.icon-trash:before {
+	content: "\e61a";
+}
+.icon-upload:before {
+	content: "\e61b";
+}
+.icon-download:before {
+	content: "\e61c";
+}
+.icon-install:before {
+	content: "\e61d";
+}
+.icon-arrow-left:before {
+	content: "\e61f";
+}
+.icon-arrow-down:before {
+	content: "\e620";
+}
+.icon-arrow-up:before {
+	content: "\e621";
+}
+.icon-uniE622:before {
+	content: "\e622";
+}

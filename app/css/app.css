@@ -1,0 +1,1090 @@
+/* line 15, ../sass/_layout.scss */
+body {
+  background: #f8f6f2;
+}
+
+/* line 19, ../sass/_layout.scss */
+.tab-bar {
+  background: #322B2B;
+  /*@include background-image(linear-gradient($color-main, #3a3a3a));*/
+  -moz-box-shadow: 0px 0px 5px 0px #555555;
+  -webkit-box-shadow: 0px 0px 5px 0px #555555;
+  box-shadow: 0px 0px 5px 0px #555555;
+}
+/* line 24, ../sass/_layout.scss */
+.tab-bar .right-small > a {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0px 15px;
+  color: #fff;
+  font-size: 18px;
+}
+/* line 32, ../sass/_layout.scss */
+.tab-bar .right-small {
+  right: -2.8125rem;
+  -moz-transition: right 0.3s ease-out;
+  -o-transition: right 0.3s ease-out;
+  -webkit-transition: right 0.3s ease-out;
+  transition: right 0.3s ease-out;
+}
+/* line 36, ../sass/_layout.scss */
+.tab-bar .right-small.active {
+  right: 0;
+}
+
+/* line 44, ../sass/_layout.scss */
+.left-submenu .back > a:before,
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu > a:after {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 58, ../sass/_layout.scss */
+ul.off-canvas-list li a {
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+/* line 61, ../sass/_layout.scss */
+ul.off-canvas-list li a:before {
+  padding-right: 10px;
+}
+
+/* line 69, ../sass/_layout.scss */
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu > a:after {
+  float: right;
+}
+
+/* line 74, ../sass/_layout.scss */
+.left-submenu .back > a:before {
+  content: "\e61f";
+}
+
+/* line 78, ../sass/_layout.scss */
+.left-off-canvas-menu ul.off-canvas-list li.has-submenu > a:after {
+  content: "\e622";
+}
+
+/* line 82, ../sass/_layout.scss */
+#userMenu {
+  width: 200px;
+}
+
+/* line 87, ../sass/_layout.scss */
+.main,
+.off-canvas-wrap,
+.inner-wrap {
+  min-height: 100%;
+}
+
+/* line 93, ../sass/_layout.scss */
+.sub-section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* line 103, ../sass/_layout.scss */
+[class*="block-grid-"] > li {
+  padding-bottom: 0;
+}
+
+/* line 107, ../sass/_layout.scss */
+.title {
+  font-size: 2rem;
+}
+
+/* line 114, ../sass/_layout.scss */
+.panel {
+  background: #fefffe;
+  -moz-box-shadow: 0px 2px 8px -3px #555555;
+  -webkit-box-shadow: 0px 2px 8px -3px #555555;
+  box-shadow: 0px 2px 8px -3px #555555;
+}
+/* line 117, ../sass/_layout.scss */
+.panel.table {
+  padding: 0;
+}
+/* line 120, ../sass/_layout.scss */
+.panel.glass {
+  background: none;
+  border: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 127, ../sass/_layout.scss */
+.panel h1, .panel h2 {
+  margin-bottom: 1rem;
+}
+
+/* line 135, ../sass/_layout.scss */
+.list-head {
+  background: #322B2B;
+  color: #fff;
+  height: 37px;
+  padding: 0.5rem 1rem 0.625rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+/* line 143, ../sass/_layout.scss */
+.content .list-head {
+  background: rgba(0, 0, 0, 0.05);
+  color: #322B2B;
+}
+
+/* line 148, ../sass/_layout.scss */
+.table {
+  font-size: 0.875rem;
+}
+/* line 150, ../sass/_layout.scss */
+.table dl {
+  border: 1px solid #d8d8d8;
+  font-size: 1em;
+}
+/* line 154, ../sass/_layout.scss */
+.table dd {
+  height: 3em;
+  background: none;
+  font-size: 1em;
+  padding: 0.8em 1em;
+}
+/* line 160, ../sass/_layout.scss */
+.table dl dd {
+  margin: 0;
+}
+
+/* line 164, ../sass/_layout.scss */
+.accordion {
+  font-size: 1em;
+}
+
+/* line 170, ../sass/_layout.scss */
+.accordion .accordion-navigation,
+.table .accordion-navigation {
+  padding: 0;
+}
+/* line 173, ../sass/_layout.scss */
+.accordion .accordion-navigation,
+.accordion dd,
+.table .accordion-navigation,
+.table dd {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-size: 1em;
+  color: #322B2B;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #CECECE;
+}
+/* line 182, ../sass/_layout.scss */
+.accordion .accordion-navigation .btn-admin,
+.accordion dd .btn-admin,
+.table .accordion-navigation .btn-admin,
+.table dd .btn-admin {
+  width: 5%;
+  font-size: 26px;
+  color: #322B2B;
+  padding-left: 0.5em;
+}
+/* line 190, ../sass/_layout.scss */
+.accordion .accordion-navigation > .content,
+.accordion dd > .content,
+.table .accordion-navigation > .content,
+.table dd > .content {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  background: #f8f6f2;
+  -moz-transition: max-height 0.6s ease-in-out;
+  -o-transition: max-height 0.6s ease-in-out;
+  -webkit-transition: max-height 0.6s ease-in-out;
+  transition: max-height 0.6s ease-in-out;
+  -moz-box-shadow: inset 1px 4px 23px -9px #322B2B;
+  -webkit-box-shadow: inset 1px 4px 23px -9px #322B2B;
+  box-shadow: inset 1px 4px 23px -9px #322B2B;
+}
+/* line 200, ../sass/_layout.scss */
+.accordion .accordion-navigation > .content .container,
+.accordion dd > .content .container,
+.table .accordion-navigation > .content .container,
+.table dd > .content .container {
+  padding: 0;
+}
+/* line 204, ../sass/_layout.scss */
+.accordion .accordion-navigation > a,
+.accordion dd,
+.table .accordion-navigation > a,
+.table dd {
+  background: #fefffe;
+}
+/* line 207, ../sass/_layout.scss */
+.accordion .accordion-navigation > a:nth-of-type(even),
+.accordion dd:nth-of-type(even),
+.table .accordion-navigation > a:nth-of-type(even),
+.table dd:nth-of-type(even) {
+  background: #fcfdfc;
+}
+/* line 211, ../sass/_layout.scss */
+.accordion .accordion-navigation > a,
+.accordion dd > a,
+.table .accordion-navigation > a,
+.table dd > a {
+  height: 3em;
+  background: none;
+  font-size: 1em;
+  padding: 0.8em 1em;
+}
+/* line 219, ../sass/_layout.scss */
+.accordion .accordion-navigation > a:hover,
+.accordion dd > a:hover,
+.table .accordion-navigation > a:hover,
+.table dd > a:hover {
+  background: #e6e6e3;
+}
+/* line 223, ../sass/_layout.scss */
+.accordion .accordion-navigation.active > a,
+.accordion dd.active > a,
+.table .accordion-navigation.active > a,
+.table dd.active > a {
+  background: #e6e6e3;
+}
+/* line 229, ../sass/_layout.scss */
+.accordion .accordion-navigation > .content.active,
+.accordion dd > .content.active,
+.table .accordion-navigation > .content.active,
+.table dd > .content.active {
+  max-height: 1000px;
+  background: #f8f6f2;
+}
+/* line 234, ../sass/_layout.scss */
+.accordion .content,
+.table .content {
+  clear: both;
+}
+/* line 236, ../sass/_layout.scss */
+.accordion .content.active,
+.table .content.active {
+  border-bottom: 1px solid #ddd;
+}
+/* line 240, ../sass/_layout.scss */
+.accordion .list,
+.table .list {
+  border: none;
+}
+/* line 242, ../sass/_layout.scss */
+.accordion .list .list-head,
+.table .list .list-head {
+  border-bottom: solid 1px #ddd;
+}
+/* line 245, ../sass/_layout.scss */
+.accordion .list .admin-buttons,
+.table .list .admin-buttons {
+  width: auto;
+}
+
+/* line 251, ../sass/_layout.scss */
+.list li {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 3em;
+  list-style: none;
+  padding: 0.8em 1em;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #CECECE;
+}
+/* line 261, ../sass/_layout.scss */
+.list ul {
+  margin-left: 0;
+}
+/* line 264, ../sass/_layout.scss */
+.list .icon-plus {
+  margin: 0 5px 5px 0;
+  float: right;
+}
+
+/*
+.table {
+
+  dd {
+    position: relative;
+    color: $color-main;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #CECECE;
+    > a {
+      font-size: 1em;
+    }
+  }
+  dd > .admin-buttons {
+    top: 0.25rem;
+  }
+}
+*/
+/* line 286, ../sass/_layout.scss */
+.accordion-navigation > a > div,
+.list-head > div,
+.list li > div {
+  width: 20%;
+  float: left;
+}
+
+/* line 293, ../sass/_layout.scss */
+button {
+  text-shadow: 0 1px 0 #000;
+  text-shadow: 0 1px 0 0 #000;
+}
+
+/* line 297, ../sass/_layout.scss */
+.button[class*=" icon-"], button[class*=" icon-"] {
+  font-family: Arial, sans-serif;
+  padding: 1rem;
+}
+/* line 300, ../sass/_layout.scss */
+.button[class*=" icon-"]:before, button[class*=" icon-"]:before {
+  font-family: 'icomoon';
+}
+
+/* line 305, ../sass/_layout.scss */
+.admin-buttons {
+  position: absolute;
+  right: 5px;
+  top: 6px;
+}
+/* line 309, ../sass/_layout.scss */
+.admin-buttons .icon-cup {
+  margin-left: 5px;
+}
+
+/* line 315, ../sass/_layout.scss */
+.f-dropdown li a {
+  display: none;
+}
+/* line 317, ../sass/_layout.scss */
+.f-dropdown li a.button {
+  display: block;
+  margin: 0;
+  text-align: left;
+  color: #fff;
+  background: #322B2B;
+  border-top: 1px solid #545454;
+  border-bottom: 1px solid #000000;
+}
+/* line 325, ../sass/_layout.scss */
+.f-dropdown li a.button:before {
+  padding-right: 10px;
+}
+/* line 328, ../sass/_layout.scss */
+.f-dropdown li a.button:hover {
+  background: #2B2B2B;
+}
+
+/* line 333, ../sass/_layout.scss */
+.f-dropdown:before {
+  border-color: transparent transparent #322B2B transparent;
+}
+
+/* line 336, ../sass/_layout.scss */
+.f-dropdown.drop-left:before {
+  border-color: transparent transparent transparent #322B2B;
+}
+
+/* line 339, ../sass/_layout.scss */
+.f-dropdown.open::before {
+  top: -11px;
+}
+
+/* line 342, ../sass/_layout.scss */
+.f-dropdown.drop-left.open:before {
+  top: 4px;
+  left: 198px;
+}
+
+/* line 346, ../sass/_layout.scss */
+.f-dropdown.drop-left.open:after {
+  top: 3px;
+}
+
+/* line 351, ../sass/_layout.scss */
+.reveal-modal {
+  top: 100px;
+  -moz-transform:  scale(0.9, 0.9);
+  -ms-transform:  scale(0.9, 0.9);
+  -webkit-transform:  scale(0.9, 0.9);
+  transform:  scale(0.9, 0.9);
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -o-transition: -o-transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+/* line 355, ../sass/_layout.scss */
+.reveal-modal.open {
+  -moz-transform:  scale(1, 1);
+  -ms-transform:  scale(1, 1);
+  -webkit-transform:  scale(1, 1);
+  transform:  scale(1, 1);
+}
+/* line 358, ../sass/_layout.scss */
+.reveal-modal h3 {
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid #c0C0C0;
+  padding-bottom: 20px;
+}
+/* line 364, ../sass/_layout.scss */
+.reveal-modal h6 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+/* line 368, ../sass/_layout.scss */
+.reveal-modal .buttons-container {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 372, ../sass/_layout.scss */
+.reveal-modal .buttons-container .button {
+  position: relative;
+  right: initial;
+  margin-right: 5%;
+}
+/* line 376, ../sass/_layout.scss */
+.reveal-modal .buttons-container .button:last-child {
+  margin-right: 0;
+}
+
+/* line 384, ../sass/_layout.scss */
+.range-slider-handle {
+  background: none;
+}
+/* line 387, ../sass/_layout.scss */
+.range-slider-handle:before {
+  content: " ";
+  display: block;
+  width: 67%;
+  height: 100%;
+  background: #008cba;
+}
+/* line 395, ../sass/_layout.scss */
+.range-slider-handle.start:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-left-color: #008cba;
+  border-width: 0.688rem;
+  margin-top: -0.688rem;
+  margin-left: -0.688rem;
+}
+/* line 413, ../sass/_layout.scss */
+.range-slider-handle.end:after {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-right-color: #008cba;
+  border-width: 0.688rem;
+  margin-top: -0.688rem;
+  margin-right: -0.688rem;
+}
+/* line 429, ../sass/_layout.scss */
+.range-slider-handle.end:before {
+  position: relative;
+  top: 0;
+  right: -0.688rem;
+}
+/* line 436, ../sass/_layout.scss */
+.range-slider-handle:hover {
+  background: none;
+}
+/* line 438, ../sass/_layout.scss */
+.range-slider-handle:hover:before {
+  background: #007ba4;
+}
+/* line 441, ../sass/_layout.scss */
+.range-slider-handle:hover.start:after {
+  border-left-color: #007ba4;
+}
+/* line 444, ../sass/_layout.scss */
+.range-slider-handle:hover.end:after {
+  border-right-color: #007ba4;
+}
+
+/* line 451, ../sass/_layout.scss */
+.error input, .error textarea, .error select {
+  border: 1px solid #fe0000;
+  margin-bottom: 1rem;
+}
+
+@media print {
+  /* line 457, ../sass/_layout.scss */
+  body {
+    -webkit-print-color-adjust: exact;
+    background: none;
+  }
+
+  /* line 461, ../sass/_layout.scss */
+  .tab-bar,
+  .button {
+    display: none;
+  }
+
+  /* line 465, ../sass/_layout.scss */
+  .panel {
+    border: none;
+  }
+}
+/* line 2, ../sass/_budget.scss */
+.Budget .chart {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+/* line 7, ../sass/_budget.scss */
+.Budget .chart .chart-explanation {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  margin-top: 4.25rem;
+  text-align: center;
+  display: table;
+}
+/* line 17, ../sass/_budget.scss */
+.Budget .chart .chart-percentage {
+  height: 100%;
+  width: 100%;
+  display: table-cell;
+  position: relative;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+  margin: 0 auto;
+  font-size: 0.8em;
+}
+/* line 28, ../sass/_budget.scss */
+.Budget .chart rect {
+  cursor: pointer;
+}
+/* line 36, ../sass/_budget.scss */
+.Budget .accordion-navigation > a > div.expenditure-name, .Budget .accordion-navigation > a > div.spending-description,
+.Budget .list-head > div.expenditure-name,
+.Budget .list-head > div.spending-description,
+.Budget .list li > div.expenditure-name,
+.Budget .list li > div.spending-description {
+  width: 30%;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 44, ../sass/_budget.scss */
+.Budget .accordion-navigation > a > div.expenditure-provider, .Budget .accordion-navigation > a > div.expenditure-provision, .Budget .accordion-navigation > a > div.expenditure-current, .Budget .accordion-navigation > a > div.expenditure-remaining,
+.Budget .list-head > div.expenditure-provider,
+.Budget .list-head > div.expenditure-provision,
+.Budget .list-head > div.expenditure-current,
+.Budget .list-head > div.expenditure-remaining,
+.Budget .list li > div.expenditure-provider,
+.Budget .list li > div.expenditure-provision,
+.Budget .list li > div.expenditure-current,
+.Budget .list li > div.expenditure-remaining {
+  width: 16%;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 54, ../sass/_budget.scss */
+.Budget .accordion-navigation > a > div.expenditure-provision, .Budget .accordion-navigation > a > div.expenditure-current, .Budget .accordion-navigation > a > div.expenditure-remaining,
+.Budget .list-head > div.expenditure-provision,
+.Budget .list-head > div.expenditure-current,
+.Budget .list-head > div.expenditure-remaining,
+.Budget .list li > div.expenditure-provision,
+.Budget .list li > div.expenditure-current,
+.Budget .list li > div.expenditure-remaining {
+  text-align: right;
+}
+/* line 59, ../sass/_budget.scss */
+.Budget .accordion-navigation > a > div.expenditure-btn, .Budget .accordion-navigation > a > div.btn-details,
+.Budget .list-head > div.expenditure-btn,
+.Budget .list-head > div.btn-details,
+.Budget .list li > div.expenditure-btn,
+.Budget .list li > div.btn-details {
+  width: 5%;
+}
+/* line 64, ../sass/_budget.scss */
+.Budget .accordion dd {
+  height: auto;
+}
+/* line 68, ../sass/_budget.scss */
+.Budget .bar {
+  font-size: 10px;
+  float: left;
+}
+/* line 73, ../sass/_budget.scss */
+.Budget .axis path,
+.Budget .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+/* line 84, ../sass/_budget.scss */
+.Budget .x.axis line {
+  stroke: #777;
+  stroke-dasharray: 2,2;
+}
+/* line 89, ../sass/_budget.scss */
+.Budget .chart-legend {
+  width: 220px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+/* line 95, ../sass/_budget.scss */
+.Budget .color {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: 5px;
+}
+/* line 100, ../sass/_budget.scss */
+.Budget .color div {
+  width: 12px;
+  height: 12px;
+}
+/* line 105, ../sass/_budget.scss */
+.Budget .line {
+  cursor: pointer;
+}
+/* line 109, ../sass/_budget.scss */
+.Budget .selected .color {
+  border: 1px solid #000000;
+}
+/* line 111, ../sass/_budget.scss */
+.Budget .selected .color div {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #FFFFFF;
+}
+/* line 118, ../sass/_budget.scss */
+.Budget .name {
+  position: relative;
+  top: -1px;
+  font-size: 0.75rem;
+}
+
+/* line 3, ../sass/_coowners.scss */
+.CoOwners .pagination {
+  position: fixed;
+  bottom: 10px;
+}
+/* line 8, ../sass/_coowners.scss */
+.CoOwners .accordion-navigation > a > div,
+.CoOwners .list-head > div,
+.CoOwners .list li > div {
+  width: 24%;
+  float: left;
+}
+/* line 13, ../sass/_coowners.scss */
+.CoOwners .accordion-navigation > a > div.expenditure-name, .CoOwners .accordion-navigation > a > div.spending-description,
+.CoOwners .list-head > div.expenditure-name,
+.CoOwners .list-head > div.spending-description,
+.CoOwners .list li > div.expenditure-name,
+.CoOwners .list li > div.spending-description {
+  width: 40%;
+}
+/* line 20, ../sass/_coowners.scss */
+.CoOwners .table dd > div {
+  width: 24%;
+  float: left;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 27, ../sass/_coowners.scss */
+.CoOwners .table dd > div:first-of-type {
+  clear: both;
+}
+/* line 31, ../sass/_coowners.scss */
+.CoOwners .table .admin-buttons {
+  width: auto;
+}
+/* line 34, ../sass/_coowners.scss */
+.CoOwners .table dl dd {
+  margin: 0;
+}
+
+/* line 1, ../sass/_documents.scss */
+.Documents {
+  /* should override Foundation print reset before */
+  /* -> force background transparent & color black */
+}
+/* line 2, ../sass/_documents.scss */
+.Documents .filters {
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+/* line 6, ../sass/_documents.scss */
+.Documents .filters .panel {
+  height: 2.45rem;
+  overflow: hidden;
+  padding-top: 0;
+  -moz-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+/* line 13, ../sass/_documents.scss */
+.Documents .filters label {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+/* line 20, ../sass/_documents.scss */
+.Documents .planning input[type="textfield"] {
+  width: 100%;
+  text-align: center;
+}
+/* line 25, ../sass/_documents.scss */
+.Documents table {
+  position: relative;
+  border: solid 3px #ddd;
+  background: none;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+}
+/* line 34, ../sass/_documents.scss */
+.Documents table tr {
+  text-align: center;
+}
+/* line 36, ../sass/_documents.scss */
+.Documents table tr.blank {
+  height: 3px;
+}
+/* line 40, ../sass/_documents.scss */
+.Documents table td.coowner {
+  color: #fff !important;
+  font-weight: bold;
+}
+/* line 44, ../sass/_documents.scss */
+.Documents table tr,
+.Documents table tr:nth-of-type(even) {
+  background: none;
+}
+/* line 49, ../sass/_documents.scss */
+.Documents table.each-1 tbody tr:nth-of-type(4n+1) td {
+  border-top: 3px solid #43ac6a;
+  border-bottom: 3px solid #43ac6a;
+}
+/* line 52, ../sass/_documents.scss */
+.Documents table.each-1 tbody tr:nth-of-type(4n+1) td.coowner {
+  background-color: #43ac6a;
+  border-right: 3px solid #43ac6a;
+}
+/* line 57, ../sass/_documents.scss */
+.Documents table.each-1 tbody tr:nth-of-type(4n+3) td {
+  border-top: 3px solid #003f54;
+  border-bottom: 3px solid #003f54;
+}
+/* line 60, ../sass/_documents.scss */
+.Documents table.each-1 tbody tr:nth-of-type(4n+3) td.coowner {
+  background-color: #003f54;
+  border-right: 3px solid #003f54;
+}
+/* line 67, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+1) td {
+  border-top: 3px solid #43ac6a;
+}
+/* line 69, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+1) td:nth-child(2) {
+  border-left: 3px solid #43ac6a;
+}
+/* line 72, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+1) td.coowner {
+  background-color: #43ac6a;
+  border-right: 3px solid #43ac6a;
+}
+/* line 77, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+2) td {
+  border-bottom: 3px solid #43ac6a;
+}
+/* line 79, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+2) td:nth-child(2) {
+  border-left: 3px solid #43ac6a;
+}
+/* line 82, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+2) td.coowner {
+  background-color: #43ac6a;
+  border-right: 3px solid #43ac6a;
+}
+/* line 88, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+4) td {
+  border-top: 3px solid #003f54;
+}
+/* line 90, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+4) td:nth-child(2) {
+  border-left: 3px solid #003f54;
+}
+/* line 93, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+4) td.coowner {
+  background-color: #003f54;
+  border-right: 3px solid #003f54;
+}
+/* line 98, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+5) td {
+  border-bottom: 3px solid #003f54;
+}
+/* line 100, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+5) td:nth-child(2) {
+  border-left: 3px solid #003f54;
+}
+/* line 103, ../sass/_documents.scss */
+.Documents table.each-2 tbody tr:nth-of-type(6n+5) td.coowner {
+  background-color: #003f54;
+  border-right: 3px solid #003f54;
+}
+/* line 110, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+1) td {
+  border-top: 3px solid #43ac6a;
+}
+/* line 112, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+1) td.coowner {
+  background-color: #43ac6a;
+  border-right: 3px solid #43ac6a;
+}
+/* line 117, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+4) td {
+  border-bottom: 3px solid #43ac6a;
+}
+/* line 119, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+4) td.coowner {
+  background-color: #43ac6a;
+  border-right: 3px solid #43ac6a;
+}
+/* line 126, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+2) td.coowner,
+.Documents table.each-4 tbody tr:nth-of-type(10n+3) td.coowner {
+  background-color: #43ac6a;
+  border-right: 3px solid #43ac6a;
+}
+/* line 132, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+6) td {
+  border-top: 3px solid #003f54;
+}
+/* line 134, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+6) td.coowner {
+  background-color: #003f54;
+  border-right: 3px solid #003f54;
+}
+/* line 139, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+9) td {
+  border-bottom: 3px solid #003f54;
+}
+/* line 141, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+9) td.coowner {
+  background-color: #003f54;
+  border-right: 3px solid #003f54;
+}
+/* line 148, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+7) td:nth-of-type(1),
+.Documents table.each-4 tbody tr:nth-of-type(10n+8) td:nth-of-type(1) {
+  border-left: 3px solid #003f54;
+}
+/* line 151, ../sass/_documents.scss */
+.Documents table.each-4 tbody tr:nth-of-type(10n+7) td.coowner,
+.Documents table.each-4 tbody tr:nth-of-type(10n+8) td.coowner {
+  background-color: #003f54;
+  border-right: 3px solid #003f54;
+}
+/* line 158, ../sass/_documents.scss */
+.Documents table tbody tr.period-odd:last-of-type td {
+  border-bottom: 6px solid #43ac6a;
+}
+/* line 161, ../sass/_documents.scss */
+.Documents table tbody tr.period-even:last-of-type td {
+  border-bottom: 6px solid #003f54;
+}
+/* line 165, ../sass/_documents.scss */
+.Documents table td.month-odd {
+  background-color: #b6edff;
+}
+/* line 168, ../sass/_documents.scss */
+.Documents table td.month-even {
+  background-color: #fff;
+}
+/* line 172, ../sass/_documents.scss */
+.Documents table tr.month-odd td.name {
+  background-color: #b6edff;
+}
+/* line 177, ../sass/_documents.scss */
+.Documents table tr.month-even td.name {
+  background-color: #fff;
+}
+/* line 183, ../sass/_documents.scss */
+.Documents table tr.blank td {
+  padding: 0;
+}
+/* line 187, ../sass/_documents.scss */
+.Documents table tr.blank.month-even td.name {
+  background-color: #fff;
+}
+/* line 192, ../sass/_documents.scss */
+.Documents table tr.blank.month-odd td.name {
+  background-color: #b6edff;
+}
+/* line 197, ../sass/_documents.scss */
+.Documents table td.blank {
+  background: #fff;
+}
+/* line 203, ../sass/_documents.scss */
+.Documents table tr.month-odd-month-even td.name,
+.Documents table tr.month-even-month-odd td.name {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0;
+  width: 2rem;
+  height: 2.45rem;
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+}
+/* line 214, ../sass/_documents.scss */
+.Documents table tr.month-odd-month-even td.name:after,
+.Documents table tr.month-even-month-odd td.name:after {
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  border: solid 2rem;
+  border-top: solid 2.4rem;
+}
+/* line 226, ../sass/_documents.scss */
+.Documents table tr.month-odd-month-even td:after {
+  border-color: #b6edff transparent transparent transparent !important;
+}
+/* line 229, ../sass/_documents.scss */
+.Documents table tr.month-even-month-odd td:after {
+  border-color: transparent transparent transparent #b6edff !important;
+}
+/* line 232, ../sass/_documents.scss */
+.Documents table td.name {
+  top: 0;
+  left: 0;
+  border: 0 !important;
+}
+/* line 236, ../sass/_documents.scss */
+.Documents table td.name span {
+  -webkit-transform: rotate(-90deg);
+  -webkit-transform-origin: 0 0;
+  position: absolute;
+  margin-left: -6px;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+@media print {
+  /* line 252, ../sass/_documents.scss */
+  .Documents #Filters {
+    display: none;
+  }
+  /* line 255, ../sass/_documents.scss */
+  .Documents .actions {
+    display: none;
+  }
+  /* line 258, ../sass/_documents.scss */
+  .Documents table thead tr th,
+  .Documents table tbody tr td,
+  .Documents table tr td {
+    line-height: 0;
+    font-size: 0.575rem;
+    padding-top: 0.4625rem;
+    padding-bottom: 0.4625rem;
+  }
+  /* line 266, ../sass/_documents.scss */
+  .Documents table tr.month-odd-month-even td.name,
+  .Documents table tr.month-even-month-odd td.name {
+    height: 1rem;
+  }
+  /* line 270, ../sass/_documents.scss */
+  .Documents table tr.month-odd-month-even td.name:after,
+  .Documents table tr.month-even-month-odd td.name:after {
+    border: solid 4rem;
+    border-top: solid 2rem;
+  }
+  /* line 275, ../sass/_documents.scss */
+  .Documents table.month-name thead th {
+    height: 1.1rem;
+  }
+  /* line 279, ../sass/_documents.scss */
+  .Documents table.month-name tr td span {
+    margin-left: 6px;
+  }
+  /* line 282, ../sass/_documents.scss */
+  .Documents table.month-name tr.name {
+    height: 0.875rem;
+  }
+  /* line 285, ../sass/_documents.scss */
+  .Documents table.month-name tr.month-odd-month-even td,
+  .Documents table.month-name tr.month-even-month-odd td {
+    height: 1rem;
+  }
+  /* line 289, ../sass/_documents.scss */
+  .Documents table.month-name tr.month-odd-month-even td:after,
+  .Documents table.month-name tr.month-even-month-odd td:after {
+    border: solid 2rem;
+  }
+  /* line 293, ../sass/_documents.scss */
+  .Documents table.month-name tr.month-odd-month-even td:after {
+    border-top: solid 1rem;
+  }
+  /* line 296, ../sass/_documents.scss */
+  .Documents table.month-name tr.month-even-month-odd td:after {
+    border: solid 1rem;
+    border-left: solid 2rem;
+  }
+  /* line 301, ../sass/_documents.scss */
+  .Documents input {
+    border: none;
+  }
+  /* line 304, ../sass/_documents.scss */
+  .Documents table td.name span {
+    margin-left: 5px;
+    margin-top: 1.1rem;
+  }
+}
+
+/* line 10, ../sass/app.scss */
+.reveal-modal .button.close-reveal-modal {
+  position: relative;
+  top: 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=app.css.map */

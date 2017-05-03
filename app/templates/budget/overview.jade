@@ -1,0 +1,19 @@
+div(class='row')
+    div(class='large-12 columns')
+        div(class='panel')
+
+            label(id="sliderLabel", i18n='years')
+            div(class="range-slider" data-range-slider='')
+                span(class="range-slider-handle start" role="range-slider" tabindex="0" aria-labelledby="sliderLabel")
+                span(class="range-slider-handle end" role="range-slider" tabindex="1" aria-labelledby="sliderLabel")
+                span(class="range-slider-active-segment")
+                input(type="hidden")
+
+
+            #chart(class='chart bar', data-tooltip aria-haspopup="true" title="")
+
+            #chartLegend(class='chart-legend')
+                div(ng-repeat='row in data', class='line', data-name='{{row.name}}')
+                    span(class='color')
+                        div(style='background: {{row.color}}')
+                    span(class='name') {{row.name}}

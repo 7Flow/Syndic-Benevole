@@ -1,0 +1,23 @@
+div(class='row')
+
+    div(class='small-8 columns')
+        div(class='panel glass')
+            h1(class='title', i18n='welcome')
+
+            div(class='text', i18n='welcome-text')
+            a(class='mail-to', i18n='email-syndic', i18n-attr='href:mailto-syndic')
+
+    div(class='small-4 columns')
+        div(class='panel')
+            h2(class='title', i18n='connect')
+
+            form(data-abide)
+                div(class='row')
+                    input(id='login', name='login', type='text' placeholder='Login', required, pattern='[a-zA-Z0-9]+')
+                div(class='row')
+                    input(id='password', name='password', type='password' placeholder='Password', required, pattern='[a-zA-Z0-9]+')
+
+                div(class='row')
+                    button(type='submit', i18n='connection')
+
+    div(class='small-4 columns')

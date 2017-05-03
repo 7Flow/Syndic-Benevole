@@ -1,0 +1,27 @@
+div(class='modal-background')
+    a(class='close-reveal-modal', href='javascript:void(0);', ng-click='cancel()') &times
+
+    div(class='small-12 columns')
+        form(data-abide, data-id='{{budget.id}}')
+            input(id='id', name='id', type='hidden', value='{{budget.id}}')
+
+            div(class='row')
+                h3(i18n='update-buget')
+            div(class='row')
+                div(class='small-12 medium-6 columns')
+                    input(id='name', name='name', type='text' placeholder='Name', value='{{coOwner.name}}', required, pattern='[a-zA-Z0-9]+')
+                div(class='small-12 medium-6 columns')
+                    input(id='lastName', name='lastName', type='text' placeholder='Last Name', value='{{coOwner.lastName}}', required, pattern='[a-zA-Z0-9]+')
+            div(class='row')
+                div(class='small-12 medium-6 columns')
+                    input(id='email', name='email', type='email' placeholder='E-mail', value='{{coOwner.email}}', pattern='[a-zA-Z0-9.@-_]+')
+                div(class='small-12 medium-6 columns')
+                    input(id='phone', name='phone', type='text' placeholder='Phone (fix or mobile)', value='{{coOwner.phone}}', pattern='[0-9-]+')
+            div(class='row')
+                div(class='small-12 columns')
+                    label(i18n='apartment')
+                    select(id='fk_apartment_id', name='fk_apartment_id', required, data-ng-model="apartSelected")
+                        option(ng-repeat='apart in apartments', value='{{apart.id}}') Lot {{apart.lot}}: {{apart.address}} {{apart.street}}
+            div(class='row buttons-container')
+                a(class='button close-reveal-modal icon-cross', href='javascript:void(0);', i18n='cancel')
+                button(type='submit', class='success icon-checkmark', i18n='confirm')

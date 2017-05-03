@@ -1,0 +1,15 @@
+div(class='modal-background')
+    a(class='close-reveal-modal', href='javascript:void(0);', ng-click='cancel()') &times
+
+    div(class='small-12 columns')
+        form(data-abide)
+            div(class='row')
+                h3(i18n='select-document')
+            div(class='row')
+                div(class='small-12 columns')
+                    label(i18n='document')
+                        select(id='document', name='document', required)
+                            option(ng-repeat='document in documents', value='{{document.id}}') {{document.title}}
+            div(class='row')
+                a(class='button close-reveal-modal icon-cross', href='javascript:void(0);', i18n='cancel')
+                button(type='submit', class='success icon-checkmark', i18n='confirm')

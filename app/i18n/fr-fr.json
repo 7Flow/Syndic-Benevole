@@ -1,0 +1,22 @@
+{
+    "delete": "Supprimer",
+    "modify": "Modifier",
+    "add": "Ajouter",
+
+    "apartment": "Appartement",
+    "name": "Prénom",
+    "lastName": "Nom",
+
+    "expenditure": "Poste de dépense",
+    "provider": "Fournisseur",
+    "provision": "Provision",
+    "amount": "Montant",
+    "description": "Description",
+
+    "of": "de",
+    "total": "total",
+    "oftotal": "du total",
+    "remaining": "restant",
+
+    "date": "Date"
+}

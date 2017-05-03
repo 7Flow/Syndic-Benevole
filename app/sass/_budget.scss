@@ -1,0 +1,123 @@
+.Budget {
+  .chart {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .chart-explanation {
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      left: 25%;
+      top: 25%;
+      margin-top: 4.25rem;
+      text-align: center;
+      display: table;
+    }
+    .chart-percentage {
+      height: 100%;
+      width: 100%;
+      display: table-cell;
+      position: relative;
+      top: 0;
+      left: 0;
+      vertical-align: middle;
+      margin: 0 auto;
+      font-size: 0.8em;
+    }
+    rect {
+      cursor: pointer;
+    }
+  }
+
+  .accordion-navigation > a > div,
+  .list-head > div,
+  .list li > div {
+    &.expenditure-name,
+    &.spending-description {
+      width: 30%;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    &.expenditure-provider,
+    &.expenditure-provision,
+    &.expenditure-current,
+    &.expenditure-remaining {
+      width: 16%;
+      text-align: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    &.expenditure-provision,
+    &.expenditure-current,
+    &.expenditure-remaining {
+      text-align: right;
+    }
+    &.expenditure-btn,
+    &.btn-details {
+      width: 5%;
+    }
+  }
+  .accordion dd {
+    height: auto;
+  }
+
+  .bar {
+    font-size: 10px;
+    float: left;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis path {
+
+  }
+
+  .x.axis line {
+    stroke: #777;
+    stroke-dasharray: 2,2;
+  }
+
+  .chart-legend {
+    width: 220px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .color {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    margin-right: 5px;
+    div {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  .line {
+    cursor: pointer;
+  }
+  .selected {
+    .color {
+      border: 1px solid #000000;
+      div {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #FFFFFF;
+      }
+    }
+  }
+  .name {
+    position: relative;
+    top: -1px;
+    font-size: 0.75rem;
+  }
+}

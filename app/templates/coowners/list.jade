@@ -1,0 +1,51 @@
+div(ng-switch='switchStatus')
+    div(data-alert,  class='alert-box alert', ng-switch-when='error')
+        p {{message}}
+        a(href='javascript:void(0);', class='close') &times;
+    div(data-alert,  class='alert-box', ng-switch-when='success')
+        p {{message}}
+        a(href='javascript:void(0);', class='close') &times;
+
+ul(class="pagination")
+    li(class="arrow unavailable")
+        a(href="") &laquo;
+
+    li(ng-repeat='row in data', class='{current: $first}')
+        a(href="") {{$index}}
+
+    li(class="arrow")
+        a(href="") &raquo;
+
+div(class='row')
+    div(class='small-8 columns')
+        #details(class='panel')
+            h1(class='title', i18n='coowners')
+
+            ul(class='small-block-grid-1 table', ng-model='data')
+                li
+                    div(class="list-head")
+                        div(i18n='apartment')
+                        div(i18n='name')
+                        div(i18n='lastName')
+
+                    dl
+                        dd(ng-repeat='row in data')
+                            div {{row.fk_apartment_id}}
+                            div {{row.name}}
+                            div {{row.lastName}}
+
+                            div(class='admin-buttons')
+                                a(class='button icon-pencil', href='javascript:void(0);', ng-click='modify(row.id)', data-reveal-id='updateModal', i18n-title='modify', data-tooltip='', aria-haspopup='true')
+                                a(class='button alert icon-cup', href='javascript:void(0);', ng-click='delete(row.id)', data-reveal-id='deleteModal', i18n-title='delete', data-tooltip='', aria-haspopup='true')
+
+                    a(class='button success icon-user-add', href='javascript:void(0);', ng-click="add()", data-reveal-id='addModal', i18n='add-coowner')
+
+    div(class='small-4 columns')
+        div(class='panel')
+            h2(class='title', i18n='map')
+
+div(id='deleteModal', class='delete-modal reveal-modal', ng-show='showDeleteModal', data-reveal, ng-coownerid='coOwnerId')
+
+div(id='addModal', class='add-modal reveal-modal', ng-show='showAddModal', ng-apartments='apartments', data-reveal)
+
+div(id='updateModal', class='update-modal reveal-modal', ng-show='showUpdateModal', ng-apartments='apartments', ng-coowner='coOwner', data-reveal, ng-coownerid='coOwnerId', ng-apartselected='apartSelected')
