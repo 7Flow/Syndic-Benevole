@@ -15,7 +15,7 @@ Used for auth token temporary storage.
 `redis-server`
 
 ## 2.Node.js
-Deplay a front server on `:7777` port, and the API server on `:8080` port.
+Deploy a front server on `:7777` port, and the API server on `:8080` port.
 `node server.js`
 
 ## 3.NginX
