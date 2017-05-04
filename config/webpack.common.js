@@ -58,7 +58,6 @@ module.exports = function (options) {
             'polyfills': './_dist/polyfills.browser.ts',
             'vendor':    './_dist/vendor.browser.ts',
             'main':      './_dist/main.browser.ts'
-
         },
 
         /*
@@ -76,7 +75,7 @@ module.exports = function (options) {
             extensions: ['', '.ts', '.js', '.json'],
 
             // An array of directory names to be resolved to the current directory
-            modules: [helpers.root('src'), helpers.root('node_modules')]
+            modules: [helpers.root('angular2/src'), helpers.root('node_modules')]
 
         },
 
@@ -135,7 +134,7 @@ module.exports = function (options) {
                 {
                     test: /\.html$/,
                     use: 'raw-loader',
-                    exclude: [helpers.root('src/index.html')]
+                    exclude: [helpers.root('angular2/index.html')]
                 },
 
                 /* File loader for supporting images, for example, in CSS files.
@@ -154,7 +153,7 @@ module.exports = function (options) {
          */
         plugins: [
             new AssetsPlugin({
-                path: helpers.root('dist'),
+                path: helpers.root('www'),
                 filename: 'webpack-assets.json',
                 prettyPrint: true
             }),
@@ -217,7 +216,7 @@ module.exports = function (options) {
              * See: https://github.com/ampedandwired/html-webpack-plugin
              */
             new HtmlWebpackPlugin({
-                template: 'src/index.html',
+                template: 'angular2/index.html',
                 title: METADATA.title,
                 chunksSortMode: 'dependency',
                 metadata: METADATA,
@@ -264,7 +263,7 @@ module.exports = function (options) {
              * Dependencies: HtmlWebpackPlugin
              */
             new HtmlElementsPlugin({
-                headTags: require('./head-config.common')
+                headTags: require('./head-config.common.js')
             }),
         /**
          * Plugin LoaderOptionsPlugin (experimental)

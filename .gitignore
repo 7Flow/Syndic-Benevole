@@ -42,5 +42,8 @@ jspm_packages
 .node_repl_history
 
 .sass-cache
-www/js/
-www/css/
+www/
+!www/fonts/
+_dist/
+angular2/src/**/*.js
+angular2/src/**/*.js.map

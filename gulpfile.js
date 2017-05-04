@@ -6,27 +6,27 @@ var compass = require('gulp-compass');
 var cleanCSS = require('gulp-clean-css');
 
 gulp.task('compass', function() {
-    gulp.src('./sass/app.scss')
+    gulp.src('./angular2/sass/app.scss')
         .pipe(compass({
-            css: 'css/',
-            sass: 'sass/',
+            css: './angular2/css/',
+            sass: './angular2/sass/',
             image: 'assets/images'
         }))
         .pipe(cleanCSS())
-        .pipe(gulp.dest('./dist/css/'));
+        .pipe(gulp.dest('./www/css/'));
 });
 
 var embedTemplates = require('gulp-angular-embed-templates');
 
 /* INLINE TPL IN ANGULAR COMPONENT */
 gulp.task('tpl', function(cb) {
-    return gulp.src('src/**/*.component.ts')
+    return gulp.src('./angular2/src/**/*.component.ts')
                 .pipe( embedTemplates({sourceType:'ts'}) )
                 .pipe( gulp.dest('./_dist') );
 });
 /* COPY OTHER TS FILES */
 gulp.task('copy', ['tpl'], function (cb) {
-    return gulp.src(['src/**/*.ts', '!src/**/*.component.ts', 'css/**/*.css'])
+    return gulp.src(['./angular2/src/**/*.ts', '!./angular2/src/**/*.component.ts', './angular2/css/**/*.css'])
                 .pipe(gulp.dest('./_dist'));
 });
 
@@ -61,6 +61,7 @@ gulp.task('dev', [
 
 gulp.task('prod', [
     'clean',
+    'compass',
     'tpl',
     'copy',
     'build-prod'

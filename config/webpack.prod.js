@@ -11,6 +11,7 @@ var webpack = require('webpack');
 var DefinePlugin = require('webpack/lib/DefinePlugin');
 var OccurenceOrderPlugin = require('webpack/lib/optimize/OccurrenceOrderPlugin');
 var DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
+var UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 //var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -20,7 +21,7 @@ var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 /**
  * Webpack Constants
  */
-const ENV = process.env.NODE_ENV = process.env.ENV = 'dev';
+const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 7888;
 const METADATA = {
@@ -89,25 +90,25 @@ module.exports = {
         // The output directory as absolute path (required).
         //
         // See: http://webpack.github.io/docs/configuration.html#output-path
-        path: helpers.root('dist'),
+        path: helpers.root('www'),
 
         // Specifies the name of each output file on disk.
         // IMPORTANT: You must not specify an absolute path here!
         //
         // See: http://webpack.github.io/docs/configuration.html#output-filename
-        filename: '[name].bundle.js',
+        filename: '[name].[chunkhash].bundle.js',
 
         // The filename of the SourceMaps for the JavaScript files.
         // They are inside the output.path directory.
         //
         // See: http://webpack.github.io/docs/configuration.html#output-sourcemapfilename
-        sourceMapFilename: '[name].bundle.map',
+        sourceMapFilename: '[name].[chunkhash].bundle.map',
 
         // The filename of non-entry chunks as relative path
         // inside the output.path directory.
         //
         // See: http://webpack.github.io/docs/configuration.html#output-chunkfilename
-        chunkFilename: '[id].chunk.js'
+        chunkFilename: '[id].[chunkhash].chunk.js'
 
     },
 
@@ -176,15 +177,11 @@ module.exports = {
             // See: https://github.com/webpack/raw-loader
             {test: /\.css$/, loader: 'raw-loader'},
 
-            // Fonts
-            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
-            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
-
             // Raw loader support for *.html
             // Returns file content as string
             //
             // See: https://github.com/webpack/raw-loader
-            {test: /\.html$/, loader: 'raw-loader', exclude: [helpers.root('index.html')]}
+            {test: /\.html$/, loader: 'raw-loader', exclude: [helpers.root('angular2/index.html')]}
 
         ],
 
@@ -214,7 +211,7 @@ module.exports = {
         // Description: Plugin to replace a standard webpack chunkhash with md5.
         //
         // See: https://www.npmjs.com/package/webpack-md5-hash
-        //new WebpackMd5Hash(),
+        new WebpackMd5Hash(),
 
         // Plugin: DedupePlugin
         // Description: Prevents the inclusion of duplicate code into your bundle
@@ -254,7 +251,7 @@ module.exports = {
         // which changes every compilation.
         //
         // See: https://github.com/ampedandwired/html-webpack-plugin
-        new HtmlWebpackPlugin({template: 'index.html', chunksSortMode: 'none'}),
+        new HtmlWebpackPlugin({template: 'angular2/index.html', chunksSortMode: 'none'}),
 
         // Plugin: DefinePlugin
         // Description: Define free variables.
@@ -265,6 +262,86 @@ module.exports = {
         // See: https://webpack.github.io/docs/list-of-plugins.html#defineplugin
         // NOTE: when adding more properties make sure you include them in custom-typings.d.ts
         new DefinePlugin({'ENV': JSON.stringify(METADATA.ENV), 'HMR': false}),
+
+        // Plugin: UglifyJsPlugin
+        // Description: Minimize all JavaScript output of chunks.
+        // Loaders are switched into minimizing mode.
+        //
+        // See: https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
+        // NOTE: To debug prod builds uncomment //debug lines and comment //prod lines
+        new UglifyJsPlugin({
+            // beautify: true, //debug
+            // mangle: false, //debug
+            // dead_code: false, //debug
+            // unused: false, //debug
+            // deadCode: false, //debug
+            // compress: {
+            //   screw_ie8: true,
+            //   keep_fnames: true,
+            //   drop_debugger: false,
+            //   dead_code: false,
+            //   unused: false
+            // }, // debug
+            // comments: true, //debug
+
+            beautify: false,//prod
+
+            // mangle: { screw_ie8 : true }, //prod
+            mangle: {
+                screw_ie8: true,
+                except: [
+                    'App',
+                    'About',
+                    'Contact',
+                    'Home',
+                    'Menu',
+                    'Footer',
+                    'XLarge',
+                    'RouterActive',
+                    'RouterLink',
+                    'RouterOutlet',
+                    'NgFor',
+                    'NgIf',
+                    'NgClass',
+                    'NgSwitch',
+                    'NgStyle',
+                    'NgSwitchDefault',
+                    'NgControl',
+                    'NgControlName',
+                    'NgControlGroup',
+                    'NgFormControl',
+                    'NgModel',
+                    'NgFormModel',
+                    'NgForm',
+                    'NgSelectOption',
+                    'DefaultValueAccessor',
+                    'NumberValueAccessor',
+                    'CheckboxControlValueAccessor',
+                    'SelectControlValueAccessor',
+                    'RadioControlValueAccessor',
+                    'NgControlStatus',
+                    'RequiredValidator',
+                    'MinLengthValidator',
+                    'MaxLengthValidator',
+                    'PatternValidator',
+                    'AsyncPipe',
+                    'DatePipe',
+                    'JsonPipe',
+                    'NumberPipe',
+                    'DecimalPipe',
+                    'PercentPipe',
+                    'CurrencyPipe',
+                    'LowerCasePipe',
+                    'UpperCasePipe',
+                    'SlicePipe',
+                    'ReplacePipe',
+                    'I18nPluralPipe',
+                    'I18nSelectPipe'
+                ] // Needed for uglify RouterLink problem
+            }, // prod
+            compress: {screw_ie8: true}, //prod
+            comments: false //prod
+        }),
 
         // Plugin: CompressionPlugin
         // Description: Prepares compressed versions of assets to serve
@@ -292,9 +369,9 @@ module.exports = {
     //
     // See: https://github.com/wbuchwalter/tslint-loader
     tslint: {
-        emitErrors: false,
-        failOnHint: false,
-        resourcePath: '_dist'
+        emitErrors: true,
+        failOnHint: true,
+        resourcePath: 'src'
     },
 
     // Html loader advanced options

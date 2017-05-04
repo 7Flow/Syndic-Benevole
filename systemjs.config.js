@@ -2,7 +2,7 @@
 
     // map tells the System loader where to look for things
     var map = {
-        'app':                        'build', // 'dist',
+        'app':                        'www',
         'rxjs':                       'node_modules/rxjs',
         'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
         '@angular':                   'node_modules/@angular',
@@ -37,7 +37,7 @@
     var config = {
         map: map,
         packages: packages
-    }
+    };
 
     // filterSystemConfig - index.html's chance to modify config before we register it.
     if (global.filterSystemConfig) { global.filterSystemConfig(config); }

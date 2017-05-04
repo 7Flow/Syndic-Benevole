@@ -3,8 +3,8 @@ Outil de gestion d'un syndicat de copropriété
 
 #Server
 
-A small express server is define on :7777 port to makes the routing between the API and the static resources (so between the node and the nginx servers).
-The node API only accepts local request, and only allows request from :7777 port.
+A small express server is define on `:7777` port to makes the routing between the API and the static resources (so between the node and the nginx servers).
+The node API only accepts local request, and only allows request from `:7777` port.
 
 Authentication use a Redis database, and user, independant from it's activity, is forced to re-auth every 30 minutes.
 
@@ -12,15 +12,22 @@ Start the following services from root folder:
 
 ##1.Redis
 Used for auth token temporary storage.
-redis-server
+`redis-server`
 
 ##2.Node.js
-Deplay a front server on :7777 port, and the API server on :8080 port.
-node server.js
+Deplay a front server on `:7777` port, and the API server on `:8080` port.
+`node server.js`
 
 ##3.NginX
 Used to serve static resources.
-Must use the ./angular2/dist/ folder as root
+Must use the `./angular2/dist/` folder as root
+
+# Build
+
+`gulp prod`
+
+#warning
+need Webpack 1.x version
 
 #Disclaimer
 This application need serious security tests before being used in production.

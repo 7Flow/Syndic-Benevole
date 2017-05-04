@@ -13,5 +13,5 @@ import "rxjs";
 import "angular2-cookie/core";
 
 // Other vendors
-import "../vendors/jquery-3.1.1.min.js";
-import "../vendors/d3.v3.min.js";
+import "../angular2/vendors/jquery-3.1.1.min.js";
+import "../angular2/vendors/d3.v3.min.js";
